@@ -3,6 +3,8 @@
 #include <vector>
 using namespace std;
 
+#include "BinarySearch.h"
+
 
 
 template< typename T >
@@ -96,10 +98,10 @@ class Derived : public Base
 		{
 			// Deep copy
 			cout << "Assignment operator" << endl;
-			Derived newObject;
-			mID	= rhs.mID;
+			Derived* newObject = new Derived();
+			newObject->mID	= rhs.mID;
 
-			return newObject;
+			return *newObject;
 		
 		}
 
@@ -156,6 +158,25 @@ int main()
 	vector<unique_ptr<Derived>> container;
 
 	
+	const unsigned int SIZE = 10000000;
+	int* collection = new int[SIZE]; 
+	for( size_t i = 0; i < SIZE; i++ )
+		collection[i] = i+5;
+
+
+	int objectToFind = 5;
+	unsigned int foundIndex = -1;
+	BinarySearch( collection, objectToFind, 0, SIZE-1, foundIndex );
+	if( foundIndex != -1 )
+		cout << foundIndex << endl;
+
+
+
+
+
+
+
+
 	system( "PAUSE" );
 
 	return 0;
