@@ -4,32 +4,28 @@
 #include <assert.h>
 
 template<typename T>
-void BinarySearch( T* collectionToSearch, T& objectToFind,
-				   unsigned int lowIndex, unsigned int highIndex, unsigned int& foundIndex )
+unsigned int BinarySearch( T* collectionToSearch, T& objectToFind,
+				   unsigned int lowIndex, unsigned int highIndex )
 {
 	assert( collectionToSearch );
 	assert( objectToFind );
 
+	if( highIndex < lowIndex )
+		return -1;
+
 	unsigned int midIndex = ( lowIndex + highIndex ) / 2;
 
-	// Lower part
-	if( objectToFind < collectionToSearch[( lowIndex + highIndex ) / 2] )
-		BinarySearch( collectionToSearch, objectToFind,
-					  lowIndex, midIndex - 1, foundIndex );
-	// Upper part
-	else if( objectToFind > collectionToSearch[( lowIndex + highIndex ) / 2] )
-		BinarySearch( collectionToSearch, objectToFind,
-					  midIndex + 1, highIndex, foundIndex );
+	if( objectToFind == collectionToSearch[midIndex] )
+		return midIndex;
 
-	// Object found at split point
-	else if( objectToFind == collectionToSearch[midIndex] )
-	{ 
-		// Found!
-		foundIndex = midIndex;
-		return;
-	}
+	// Lower part
+	else if( objectToFind < collectionToSearch[midIndex] )
+		return BinarySearch( collectionToSearch, objectToFind,
+					  lowIndex, midIndex - 1 );
+	// Upper part
+	else if( objectToFind > collectionToSearch[midIndex] )
+		return BinarySearch( collectionToSearch, objectToFind,
+					  midIndex + 1, highIndex );
 
 }
-
-
 #endif 

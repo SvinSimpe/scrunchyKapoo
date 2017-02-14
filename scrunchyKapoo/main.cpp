@@ -161,15 +161,14 @@ int main()
 	const unsigned int SIZE = 10000000;
 	int* collection = new int[SIZE]; 
 	for( size_t i = 0; i < SIZE; i++ )
-		collection[i] = i+5;
+		collection[i] = (int)i+5;
 
 
-	int objectToFind = 5;
-	unsigned int foundIndex = -1;
-	BinarySearch( collection, objectToFind, 0, SIZE-1, foundIndex );
+	int objectToFind = 1000000;
+	unsigned int foundIndex = BinarySearch( collection, objectToFind, 0, SIZE-1);
+	
 	if( foundIndex != -1 )
-		cout << foundIndex << endl;
-
+		cout << "Found at index: " << foundIndex << endl;
 
 
 
