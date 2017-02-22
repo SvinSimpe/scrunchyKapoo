@@ -110,11 +110,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Orc.h" />
     <ClCompile Include="QuadTree.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Actor.h" />
     <ClInclude Include="BinarySearch.h" />
+    <ClInclude Include="DamageDealer.h" />
     <ClInclude Include="QuadTree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

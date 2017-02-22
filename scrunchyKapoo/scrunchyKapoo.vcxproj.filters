@@ -21,12 +21,24 @@
     <ClCompile Include="QuadTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Orc.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="QuadTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BinarySearch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DamageDealer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
